@@ -1,10 +1,13 @@
 from .metrics import compute_recall, compute_precision, compute_f1
+
 from .logger import logger
+from typing import Optional
+
 
 
 def find_best_threshold(
         metrics_by_threshold: dict[float, dict[str, int]]
-) -> float | None:
+) -> Optional[float]:
     best_threshold = None
     best_score = -1.0
 
