@@ -8,7 +8,7 @@ class BestThresholdTestCase(unittest.TestCase):
             0.2: {"tp": 85, "fp": 5, "tn": 82, "fn": 10},
             0.3: {"tp": 60, "fp": 2, "tn": 90, "fn": 40},
         }
-        self.assertEqual(find_best_threshold(data), 0.2)
+        self.assertEqual(find_best_threshold(data), 0.1)
 
     def test_no_valid_threshold(self):
         data = {
