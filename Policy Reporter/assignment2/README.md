@@ -21,6 +21,11 @@ assignment2/
 └── README.md               # Documentation
 ```
 
+## Run the program
+```bash
+./gradle run
+```
+
 ## Run Tests
 ```bash
 ./gradlew test
