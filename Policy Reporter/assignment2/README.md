@@ -11,10 +11,8 @@ assignment2/
 │   └── FSM.java            # FSM engine that holds the current state
 │
 ├── mod3/
-│   ├── S0.java             # Mod-3 state for remainder 0
-│   ├── S1.java             # Mod-3 state for remainder 1
-│   ├── S2.java             # Mod-3 state for remainder 2
-│   ├── Mod3FSMRunner.java  # Static runner method to evaluate binary inputs
+│   ├── Mod3State.java      # Mod-3 states
+│   ├── Mod3FSM.java        # Process binary strings and compute the result of a modulo-3 FSM
 │   └── Main.java           # Example main program
 │
 ├── tests/
