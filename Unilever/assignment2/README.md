@@ -70,9 +70,48 @@ export GOOGLE_API_KEY="your-api-key-here"
 ```
 or
 ```bash
-export GROK_API_KEY="your-api-key-here"
+export GROQ_API_KEY="your-api-key-here"
 ```
 Then:
 ```bash
 python3 main.py "I want to know which one of the Ash or Jessie will be the winner of the competition."
+```
+Output:
+```bash
+> Entering new AgentExecutor chain...
+To determine the winner of the competition between Ash and Jessie, I need to follow a series of steps that involve validating the input, extracting Pokémon information, fetching weights, and finally deciding the winner.
+
+Action: validate_and_extract_names
+Action Input: Ash or JessieDEBUG:  
+validate_and_extract_names received input: Ash or Jessie
+
+
+DEBUG:  Found names in input question: ['Jessie', 'Ash']
+
+
+
+Observation: Jessie,Ash
+Thought:Now that I have validated the input and extracted the names of the two individuals (Jessie and Ash), I need to proceed with extracting the Pokémon owned by them.
+
+Action: extract_pokemons
+Action Input: Jessie,Ash
+DEBUG:  Humans in extract_pokemons ['Jessie', 'Ash']
+
+Observation: {"Jessie": ["Charizard", "Gardevoir", "Seviper", "Wobbuffet"], "Ash": ["Pikachu", "Charizard", "Lucario", "Gyarados"]}
+Thought:With the Pokémon information for both Jessie and Ash extracted, the next step is to fetch the weights of these Pokémon.
+
+Action: fetch_weights
+Action Input: {"Jessie": ["Charizard", "Gardevoir", "Seviper", "Wobbuffet"], "Ash": ["Pikachu", "Charizard", "Lucario", "Gyarados"]}
+Observation: {'Jessie': [('Charizard', 90.5), ('Gardevoir', 48.4), ('Seviper', 52.5), ('Wobbuffet', 28.5)], 'Ash': [('Pikachu', 6.0), ('Charizard', 90.5), ('Lucario', 54.0), ('Gyarados', 235.0)]}
+Thought:Now that I have the weights of the Pokémon for both Jessie and Ash, I need to generate a CSV file and decide the final winner based on the weights.
+
+Action: generate_csv_and_decide_winner
+Action Input: {'Jessie': [('Charizard',90.5), ('Gardevoir',48.4), ('Seviper',52.5), ('Wobbuffet',28.5)], 'Ash': [('Pikachu',6.0), ('Charizard',90.5), ('Lucario',54.0), ('Gyarados',235.0)]}
+Observation: The winner of the duel between Jessie and Ash is Ash! Congratulations Ash!! Ash won against Jessie with a score of 3 to 1!
+Thought:I now know the final answer.
+
+Final Answer: The winner of the duel between Jessie and Ash is Ash! Congratulations Ash!! Ash won against Jessie with a score of 3 to 1!
+
+> Finished chain.
+OUTPUT: The winner of the duel between Jessie and Ash is Ash! Congratulations Ash!! Ash won against Jessie with a score of 3 to 1!
 ```
