@@ -1,0 +1,5 @@
+From this full conversation transcript, extract the Pokémon owned by the given human.
+Only return Pokémon names in a list format, with each name separated by commas, and no extra explanation or code. The output should look like this: ['Pikachu', 'Charizard', 'Lucario', 'Gyarados'] with each Pokémon name as a string (enclosed in quotes).
+
+Human: {human}
+Transcript: {dialogue}

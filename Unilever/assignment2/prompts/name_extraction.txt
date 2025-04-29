@@ -1,0 +1,5 @@
+Extract exactly two human names from the following list if mentioned: Ash, Misty, Brock, Jessie, James.
+If less or more than two valid names are mentioned, respond "Incorrect question".
+
+Input: {question}
+Output: 
